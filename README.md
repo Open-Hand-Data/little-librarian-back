@@ -140,4 +140,22 @@ Managing the uses of our api and databases so only our users are able to access 
 
 Database
 - Each item belongs to a single location
-- 
+- The two databases will be a Library Database and a Book Database
+  - There will be a identifier in the Library that will have an associated data point in the Book 
+- Each book is associated with only one library
+
+Library
+- Geolocation : {latitude: 1234, longitude: 4321}
+- Library Name : String
+- Charter # : String
+
+Book
+- LibraryCharterNum : number
+- Title : String
+- Author : String
+- Description: String
+- Thumbnail : String (url)
+- Note(PUT): String
+
+
+

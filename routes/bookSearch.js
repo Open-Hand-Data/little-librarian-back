@@ -7,11 +7,9 @@ require('dotenv').config();
 // req{query: String}
 
 async function handleBookSearch(req, res) {
-  console.log(req);
   try {
-    let titleSearch = req.query.title.replaceAll(' ', '+');
+    let titleSearch = req.query.title.replace(/\s+/g, '+');
     let reply = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${titleSearch}&key=${process.env.GOOGLE_BOOKS_API}`);
-    console.log(reply);
     let bookResults = reply.data.items.map(item => {
       let book = {
         title: item.volumeInfo.title,

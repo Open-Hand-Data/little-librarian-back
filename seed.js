@@ -26,6 +26,14 @@ async function seed() {
     });
 
     await Book.create({
+      libraryCharter: '15715',
+      title: 'Dr. No',
+      author: 'Ian Fleming',
+      description: 'After recovering from serious poisoning inflicted by the SMERSH agent Rosa Klebb (in From Russia, with Love) the MI6 agent James Bond is sent by his superior, M, on an undemanding mission to the British Colony of Jamaica.',
+      thumbnail: 'https://placekitten.com/200/300'
+    });
+
+    await Book.create({
       libraryCharter: '59905',
       title: 'Dr. No',
       author: 'Ian Fleming',
@@ -45,7 +53,7 @@ async function seed() {
       charter: '59905'
     })
 
-    console.log('Database seeded with 3 books and 2 libraries!');
+    console.log('Database seeded with 4 books and 2 libraries!');
 
   } catch (err) {
     console.error(err);

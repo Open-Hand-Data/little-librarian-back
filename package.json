@@ -1,0 +1,26 @@
+{
+  "name": "little-librarian-back",
+  "version": "1.0.0",
+  "description": "What are key strengths? Steve is familiar with the material and has already presented a 301 project. Strength in css Joseph has an aptitude for reading documentation and strong in react Joey is strong in design and layout. Strength in css Chris is Persistent and has strong follow through Sam efficient and focused on task at hand",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Open-Hand-Data/little-librarian-back.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Open-Hand-Data/little-librarian-back/issues"
+  },
+  "homepage": "https://github.com/Open-Hand-Data/little-librarian-back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.13"
+  }
+}

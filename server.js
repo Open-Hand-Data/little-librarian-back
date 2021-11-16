@@ -11,7 +11,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// const Book = require('Models/)
+//handler imports
+const handleBookSearch = require('./routes/bookSearch');
 
 const PORT = process.env.PORT || 3001
 
@@ -25,6 +26,12 @@ db.once('open', function() {
 
 //Request Paths
 app.get('/test', (req, res) => res.status(200).send('I AM ALIVE! Hello! :)'));
+app.get('/books/search', handleBookSearch) //?book title
+app.post('/books/add') //data:{book} :charter#
+app.get('/books/catalogue') //?charter#
+app.delete('/books/remove') //:DB ID
+app.put('/books/review') //:id data:{review}
+app.get('/libraries') //?charter#
 
 
-app.listen(PORT, () => console.log(`I am alive! Listening on ${3001}`));
+app.listen(PORT, () => console.log(`I am alive! Listening on ${PORT}`));

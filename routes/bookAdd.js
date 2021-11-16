@@ -12,14 +12,14 @@ async function handleAddBook(req, res){
     let newBook = await Book.create({
       libraryCharter: req.params.charter,
       title: req.body.title,
-      author: req.body.authors[0] || '',
+      author: req.body.author || '',
       description: req.body.description,
-      thumbnail: req.body.coverImg[0] || ''
+      thumbnail: req.body.thumbnail || ''
     });
     res.status(200).send(newBook);
   }catch (err){
     console.error(err)
-    res.status(500).send('Something went wrong adding book!')
+    res.status(500).send('Something went wrong adding your book!')
   }
 }
 

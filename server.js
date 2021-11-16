@@ -1,11 +1,10 @@
-'use strict'
+'use strict';
 
 //Dependencies
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose');
-const { response } = require('express');
 
 //setup express and middleware
 const app = express();
@@ -17,7 +16,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 3001
 
 //Connect to DB and proof of connection
-mongoose.connect(process.env.SERVER_URL, {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.DB_URL, {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error'));
 db.once('open', function() {

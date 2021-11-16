@@ -13,9 +13,9 @@ async function handleBookSearch(req, res) {
     let bookResults = reply.data.items.map(item => {
       let book = {
         title: item.volumeInfo.title,
-        authors: item.volumeInfo.authors,
+        author: item.volumeInfo.authors[0],
         description: item.volumeInfo.description || null,
-        coverImg: item.volumeInfo.imageLinks || null
+        thumbnail: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : null
       };
       return book;
     })

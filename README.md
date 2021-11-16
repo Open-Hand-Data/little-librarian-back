@@ -150,7 +150,7 @@
     * There will be a identifier in the Library that will have an associated data point in the Book
   * Each book is associated with only one library
 
-**DB Schemas**
+### DB Schemas
 
 ```js
 Library = {

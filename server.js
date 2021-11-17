@@ -16,7 +16,7 @@ app.use(express.json());
 function handleRequest(req, res, callbackFn){
   verifyUser(req, (error, user) => {
     if(error){
-      response.send('invalid token, dawg')
+      res.send('invalid token, dawg')
     }else{
       callbackFn(req, res);
     }

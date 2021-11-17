@@ -11,6 +11,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+function testCommit (){
+  console.log('foo');
+}
+
 //handler imports
 const handleBookSearch = require('./routes/bookSearch');
 const handleAddBook = require('./routes/bookAdd');

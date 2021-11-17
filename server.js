@@ -43,7 +43,13 @@ db.once('open', function() {
 
 //Request Paths
 app.get('/testToken', (req, res) => handleRequest(req, res, ()=>res.status(200).send('VERIFIED')));
-app.get('/test', (req, res) => res.status(200).send('I AM ALIVE! Hello! :)'));
+app.get('/test', (req, res) => {
+  console.log(req.headers)
+  res.status(200).send('hello');
+})
+
+
+
 app.get('/books/search', (req, res) => handleRequest(req, res, handleBookSearch)); //?title=
 app.post('/books/add/:charter', (req, res) => handleRequest(req, res, handleAddBook)); //data:{book} :charter#
 app.get('/books/catalogue', (req, res) => handleRequest(req, res, handleMatchCharter)); //?charter#

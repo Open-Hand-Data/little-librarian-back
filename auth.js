@@ -3,7 +3,7 @@ const jwksClient = require('jwks-rsa');
 
 
 const client = jwksClient({
-  jwksUri: process.env.AUTH_DOMAIN
+  jwksUri: `https://${process.env.AUTH_DOMAIN}/.well-known/jwks.json`
 });
 
 function getKey(header, callback) {

@@ -15,6 +15,9 @@ app.use(express.json());
 const handleBookSearch = require('./routes/bookSearch');
 const handleAddBook = require('./routes/bookAdd');
 const handleMatchCharter = require('./routes/matchCharter');
+const handleBookRemove = require('./routes/bookRemove');
+const handleBookReview = require('./routes/bookReview');
+const handleLibraryList = require('./routes/libraryListing');
 
 const PORT = process.env.PORT || 3001
 
@@ -31,9 +34,9 @@ app.get('/test', (req, res) => res.status(200).send('I AM ALIVE! Hello! :)'));
 app.get('/books/search', handleBookSearch); //?title=
 app.post('/books/add/:charter', handleAddBook); //data:{book} :charter#
 app.get('/books/catalogue', handleMatchCharter); //?charter#
-app.delete('/books/remove/id'); //:DB ID
-app.put('/books/review/:id'); //:id data:{review}
-app.get('/libraries'); //?charter#
+app.delete('/books/remove/:id', handleBookRemove); //:DB ID
+app.put('/books/review/:id', handleBookReview); //:id body:{book w/ review}
+app.get('/libraries', handleLibraryList); //?book-title
 
 
 app.listen(PORT, () => console.log(`I am alive! Listening on ${PORT}`));

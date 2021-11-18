@@ -11,7 +11,7 @@ async function findLibraries (arr) {
 async function handleLibraryList(req, res) {
   try {
     let bookResults = await Book.find({
-      title: req.query.title
+      title: {$regex: req.query.title, $options: 'i'}
     });
     let libraries = await Promise.all(bookResults.map(result => Library.find({ charter: result.libraryCharter })))
     libraries = libraries.map(library => library[0]);

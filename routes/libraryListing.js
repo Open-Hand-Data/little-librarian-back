@@ -13,8 +13,12 @@ async function handleLibraryList(req, res) {
     let bookResults = await Book.find({
       title: {$regex: req.query.title, $options: 'i'}
     });
-    let libraries = await Promise.all(bookResults.map(result => Library.find({ charter: result.libraryCharter })))
-    libraries = libraries.map(library => library[0]);
+    let libraries = await Promise.all(bookResults.map(result => {
+      let libraryResult=Library.find({ charter: result.libraryCharter })
+      let library = libraryResult[0];
+      library.title = result.title;
+      return library;
+    }))
     res.status(200).send(libraries);
   } catch (err) {
     console.error(err)

@@ -14,7 +14,8 @@ async function seed() {
       title: 'Crime and Punishment',
       author: 'Fyodor Dostoyevsky',
       description: 'Crime and Punishment focuses on the mental anguish and moral dilemmas of Rodion Raskolnikov, an impoverished ex-student in Saint Petersburg who formulates a plan to kill an unscrupulous pawnbroker for her money.',
-      thumbnail: 'https://placekitten.com/200/300'
+      thumbnail: 'https://placekitten.com/200/300',
+      review: []
     });
 
     await Book.create({
@@ -22,7 +23,8 @@ async function seed() {
       title: 'Salt Fat Acid Heat',
       author: 'Samin Nosrat',
       description: 'Salt Fat Acid Heat: Mastering the Elements of Good Cooking is a 2017 cookbook written by American chef Samin Nosrat and illustrated by Wendy MacNaughton. It inspired the 2018 American cooking documentary Salt Fat Acid Heat.',
-      thumbnail: 'https://placekitten.com/200/300'
+      thumbnail: 'https://placekitten.com/200/300',
+      review: []
     });
 
     await Book.create({
@@ -30,7 +32,8 @@ async function seed() {
       title: 'Dr. No',
       author: 'Ian Fleming',
       description: 'After recovering from serious poisoning inflicted by the SMERSH agent Rosa Klebb (in From Russia, with Love) the MI6 agent James Bond is sent by his superior, M, on an undemanding mission to the British Colony of Jamaica.',
-      thumbnail: 'https://placekitten.com/200/300'
+      thumbnail: 'https://placekitten.com/200/300',
+      review: []
     });
 
     await Book.create({
@@ -38,7 +41,8 @@ async function seed() {
       title: 'Dr. No',
       author: 'Ian Fleming',
       description: 'After recovering from serious poisoning inflicted by the SMERSH agent Rosa Klebb (in From Russia, with Love) the MI6 agent James Bond is sent by his superior, M, on an undemanding mission to the British Colony of Jamaica.',
-      thumbnail: 'https://placekitten.com/200/300'
+      thumbnail: 'https://placekitten.com/200/300',
+      review: []
     });
 
     await Library.create({

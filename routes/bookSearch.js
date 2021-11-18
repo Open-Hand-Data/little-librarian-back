@@ -13,7 +13,7 @@ async function handleBookSearch(req, res) {
     let bookResults = reply.data.items.map(item => {
       let book = {
         title: item.volumeInfo.title,
-        author: item.volumeInfo.authors[0],
+        author: item.volumeInfo.authors ? item.volumeInfo.authors[0] : "Unavailable",
         description: item.volumeInfo.description || null,
         thumbnail: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : null
       };

@@ -22,6 +22,7 @@ async function handleLibraryList(req, res) {
         libraryName: library.libraryName,
         charter: library.charter,
         title: result.title,
+        thumbnail: result.thumbnail,
         __v: library.__v
       };
       console.log(modLibrary);
